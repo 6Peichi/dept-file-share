@@ -1,0 +1,385 @@
+# 下載與安裝指南
+
+## 📦 方法一：一鍵安裝腳本（推薦）
+
+### 使用 curl 下載並安裝
+
+```bash
+# 下載並執行一鍵安裝腳本
+curl -fsSL https://raw.githubusercontent.com/your-repo/dept-file-share/main/one-click-install.sh | bash
+```
+
+### 使用 wget 下載並安裝
+
+```bash
+# 下載並執行一鍵安裝腳本
+wget -qO- https://raw.githubusercontent.com/your-repo/dept-file-share/main/one-click-install.sh | bash
+```
+
+---
+
+## 📦 方法二：下載完整壓縮包
+
+### 下載連結
+
+**選項 A：GitHub Release（推薦）**
+```
+https://github.com/your-repo/dept-file-share/releases/latest/download/dept-file-share.tar.gz
+```
+
+**選項 B：直接下載**
+```
+https://your-domain.com/downloads/dept-file-share-v1.0.tar.gz
+```
+
+### 下載並解壓
+
+```bash
+# 使用 wget 下載
+wget https://github.com/your-repo/dept-file-share/archive/refs/heads/main.tar.gz -O dept-file-share.tar.gz
+
+# 或使用 curl 下載
+curl -L https://github.com/your-repo/dept-file-share/archive/refs/heads/main.tar.gz -o dept-file-share.tar.gz
+
+# 解壓縮
+tar -xzf dept-file-share.tar.gz
+
+# 進入目錄
+cd dept-file-share
+
+# 執行安裝
+chmod +x install.sh
+./install.sh
+```
+
+---
+
+## 📦 方法三：使用 Git 克隆
+
+### 前提：需要安裝 Git
+
+```bash
+# 檢查是否已安裝 Git
+git --version
+
+# 如果沒有，安裝 Git
+sudo apt update
+sudo apt install -y git
+```
+
+### 克隆倉庫
+
+```bash
+# 克隆專案
+git clone https://github.com/your-repo/dept-file-share.git
+
+# 進入目錄
+cd dept-file-share
+
+# 執行安裝
+chmod +x install.sh
+./install.sh
+```
+
+---
+
+## 📦 方法四：手動建立（適合離線環境）
+
+### 步驟 1：建立目錄結構
+
+```bash
+mkdir -p ~/dept-file-share/templates
+cd ~/dept-file-share
+```
+
+### 步驟 2：複製檔案內容
+
+請從以下來源獲取檔案內容：
+
+1. **線上文件平台**（如果您使用 Claude，可以從對話記錄中複製）
+2. **USB 隨身碟**（如果有人已經打包好）
+3. **內部檔案伺服器**（公司內部分享）
+
+### 步驟 3：逐一建立檔案
+
+參考 `CHECKLIST.md` 中的檔案清單，使用以下命令建立每個檔案：
+
+```bash
+# 範例：建立 requirements.txt
+cat > requirements.txt << 'EOF'
+Flask==3.0.0
+openpyxl==3.1.2
+python-docx==1.1.0
+pandas==2.1.4
+Werkzeug==3.0.1
+EOF
+
+# 其他檔案依此類推...
+```
+
+詳細內容請參考完整的 `INSTALL.md`。
+
+---
+
+## 🔗 檔案下載清單
+
+如果您想單獨下載每個檔案：
+
+### 核心檔案
+
+| 檔案 | 下載連結 | 說明 |
+|------|---------|------|
+| app.py | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/app.py) | 主程式 |
+| requirements.txt | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/requirements.txt) | 套件清單 |
+| start.sh | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/start.sh) | 啟動腳本 |
+| stop.sh | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/stop.sh) | 停止腳本 |
+| status.sh | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/status.sh) | 狀態檢查 |
+| install.sh | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/install.sh) | 安裝腳本 |
+
+### 文件檔案
+
+| 檔案 | 下載連結 | 說明 |
+|------|---------|------|
+| README.md | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/README.md) | 專案說明 |
+| INSTALL.md | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/INSTALL.md) | 安裝手冊 |
+| CHECKLIST.md | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/CHECKLIST.md) | 檔案檢查清單 |
+
+### 模板檔案
+
+| 檔案 | 下載連結 | 說明 |
+|------|---------|------|
+| templates/home.html | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/templates/home.html) | 首頁 |
+| templates/files.html | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/templates/files.html) | 檔案管理 |
+| templates/bookmarks.html | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/templates/bookmarks.html) | 書籤管理 |
+| templates/excel_viewer.html | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/templates/excel_viewer.html) | Excel 檢視器 |
+| templates/word_viewer.html | [下載](https://raw.githubusercontent.com/your-repo/dept-file-share/main/templates/word_viewer.html) | Word 檢視器 |
+
+### 單檔下載命令
+
+```bash
+# 下載單一檔案範例
+wget https://raw.githubusercontent.com/your-repo/dept-file-share/main/app.py
+
+# 或使用 curl
+curl -O https://raw.githubusercontent.com/your-repo/dept-file-share/main/app.py
+```
+
+---
+
+## 💾 離線安裝包製作
+
+如果您需要在沒有網路的環境安裝，可以先製作離線安裝包：
+
+### 在有網路的機器上執行
+
+```bash
+# 1. 完成正常安裝
+cd ~/dept-file-share
+./install.sh
+
+# 2. 下載所有 Python 套件
+source venv/bin/activate
+pip download -r requirements.txt -d packages/
+
+# 3. 打包整個目錄（包含已下載的套件）
+cd ~
+tar -czf dept-file-share-offline.tar.gz dept-file-share/
+
+# 4. 複製到 USB 隨身碟
+cp dept-file-share-offline.tar.gz /media/usb/
+```
+
+### 在離線機器上安裝
+
+```bash
+# 1. 從 USB 複製安裝包
+cp /media/usb/dept-file-share-offline.tar.gz ~/
+
+# 2. 解壓縮
+cd ~
+tar -xzf dept-file-share-offline.tar.gz
+
+# 3. 安裝 Python 套件（離線模式）
+cd dept-file-share
+python3 -m venv venv
+source venv/bin/activate
+pip install --no-index --find-links=packages/ -r requirements.txt
+
+# 4. 啟動
+./start.sh
+```
+
+---
+
+## 🔄 版本更新
+
+### 檢查當前版本
+
+```bash
+cd ~/dept-file-share
+grep "版本" README.md
+# 或
+head -n 1 CHANGELOG.md  # 如果有的話
+```
+
+### 更新到最新版
+
+#### 方法 A：使用 Git（如果用 Git 安裝）
+
+```bash
+cd ~/dept-file-share
+
+# 備份
+./stop.sh
+tar -czf backup-$(date +%Y%m%d).tar.gz uploaded_files/ bookmarks.json
+
+# 更新
+git pull origin main
+
+# 更新套件
+source venv/bin/activate
+pip install -r requirements.txt --upgrade
+
+# 重啟
+./start.sh
+```
+
+#### 方法 B：下載新版覆蓋
+
+```bash
+cd ~/dept-file-share
+
+# 備份
+./stop.sh
+tar -czf backup-$(date +%Y%m%d).tar.gz uploaded_files/ bookmarks.json
+
+# 下載新版本（只覆蓋程式檔案）
+wget https://github.com/your-repo/dept-file-share/releases/latest/download/update.tar.gz
+tar -xzf update.tar.gz --exclude=uploaded_files --exclude=bookmarks.json
+
+# 更新套件
+source venv/bin/activate
+pip install -r requirements.txt --upgrade
+
+# 重啟
+./start.sh
+```
+
+---
+
+## 🌐 鏡像下載（中國大陸用戶）
+
+如果 GitHub 訪問速度慢，可以使用鏡像：
+
+### Gitee 鏡像
+
+```bash
+git clone https://gitee.com/your-repo/dept-file-share.git
+```
+
+### 國內加速
+
+```bash
+# 使用 ghproxy 加速
+git clone https://ghproxy.com/https://github.com/your-repo/dept-file-share.git
+
+# 或使用 cnpmjs 鏡像
+wget https://registry.npmmirror.com/dept-file-share/-/dept-file-share.tar.gz
+```
+
+---
+
+## 📋 安裝驗證
+
+安裝完成後，執行以下命令驗證：
+
+```bash
+cd ~/dept-file-share
+
+# 1. 檢查檔案完整性
+bash CHECKLIST.md
+
+# 2. 啟動系統
+./start.sh
+
+# 3. 檢查狀態
+./status.sh
+
+# 4. 訪問測試
+curl http://localhost:5000
+# 應該返回 HTML 內容
+
+# 5. 查看日誌
+tail -f logs/app.log
+```
+
+---
+
+## ❓ 下載常見問題
+
+### Q: 下載速度很慢怎麼辦？
+
+**A:** 嘗試以下方法：
+1. 使用鏡像站點
+2. 使用代理或 VPN
+3. 在訪問速度較快的時間下載（如凌晨）
+4. 請同事已下載的人分享
+
+### Q: 提示找不到檔案？
+
+**A:** 確認：
+1. URL 是否正確
+2. 網路連線是否正常
+3. 是否有訪問權限
+4. 檔案是否已移動或刪除
+
+### Q: 下載後無法解壓？
+
+**A:** 檢查：
+```bash
+# 檢查檔案完整性
+md5sum dept-file-share.tar.gz
+
+# 檢查檔案類型
+file dept-file-share.tar.gz
+
+# 使用正確的解壓命令
+tar -tzf dept-file-share.tar.gz  # 先列出內容
+tar -xzf dept-file-share.tar.gz  # 再解壓
+```
+
+### Q: 離線安裝時提示缺少套件？
+
+**A:** 確認離線包是否包含 `packages/` 目錄：
+```bash
+ls packages/
+# 應該看到 .whl 或 .tar.gz 檔案
+
+# 手動安裝
+pip install packages/*.whl
+```
+
+---
+
+## 📞 獲取幫助
+
+如果下載或安裝遇到問題：
+
+1. 檢查 `INSTALL.md` 的故障排除章節
+2. 查看 `logs/` 目錄的錯誤日誌
+3. 在 GitHub Issues 提問
+4. 聯繫系統管理員
+
+---
+
+## 📅 更新日誌
+
+### v1.0 (2024-12-17)
+- 初始版本發布
+- 支援檔案上傳下載
+- 支援 Excel/Word 線上編輯
+- 支援網址書籤管理
+
+---
+
+**下載連結將在正式發布後提供。目前請使用手動安裝方式。**
